@@ -1,9 +1,9 @@
 "use client";
-
 import { jobOffers } from "@/lib/constants/jobOffers";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import MarkerClusterGroup from "react-leaflet-cluster";
 
 // Correction des icônes par défaut (Leaflet ne les charge pas correctement sur Next.js)
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -25,21 +25,23 @@ export const Map = () => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      {jobOffers.map((offer) => (
-        <Marker
-          key={offer.id}
-          position={[
-            offer.location.coordinates.lat,
-            offer.location.coordinates.lng,
-          ]}
-        >
-          <Popup>
-            <strong>{offer.title}</strong>
-            <br />
-            {offer.company}
-          </Popup>
-        </Marker>
-      ))}
+      <MarkerClusterGroup>
+        {jobOffers.map((job) => (
+          <Marker
+            key={job.id}
+            position={[
+              job.location.coordinates.lat,
+              job.location.coordinates.lng,
+            ]}
+          >
+            <Popup>
+              <strong>{job.title}</strong> <br />
+              {job.company} <br />
+              {job.location.address}, {job.location.city}
+            </Popup>
+          </Marker>
+        ))}
+      </MarkerClusterGroup>
     </MapContainer>
   );
 };
