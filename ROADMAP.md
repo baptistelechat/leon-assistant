@@ -14,9 +14,9 @@ Cette feuille de route servira de guide pour les différentes étapes de dévelo
 ---
 
 ## 📍 2. Gestion des Marqueurs
-- [ ] Ajouter des marqueurs statiques pour tester l'affichage
-- [ ] Implémenter le clustering des marqueurs pour les zones denses
-- [ ] Afficher des info-bulles avec des détails d'offres (titre, entreprise, localisation)
+- [x] Ajouter des marqueurs statiques pour tester l'affichage
+- [x] Implémenter le clustering des marqueurs pour les zones denses
+- [x] Afficher des info-bulles avec des détails d'offres (titre, entreprise, localisation)
 
 ---
 
@@ -43,7 +43,7 @@ Cette feuille de route servira de guide pour les différentes étapes de dévelo
 ---
 
 ## 🎨 6. Personnalisation de l'Interface
-- [x] Intégrer des composants Shadcn/UI pour l'interface utilisateur
+- [ ] Intégrer des composants Shadcn/UI pour l'interface utilisateur
 - [ ] Ajouter un thème clair/sombre
 - [ ] Optimiser le design pour le responsive (mobile/tablette)
 ****
@@ -62,4 +62,4 @@ Les cases `[ ]` deviennent `[x]` lorsque la tâche est terminée. 🎯
 
 ---
 
-**Dernière mise à jour :** `$(date)`  
+<!-- **Dernière mise à jour :** `$(date)`   -->
